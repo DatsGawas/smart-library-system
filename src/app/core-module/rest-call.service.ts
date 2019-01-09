@@ -3,8 +3,8 @@
  */
 
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Observable} from "rxjs/index";
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Injectable()
 export class RestCallService {
@@ -16,10 +16,10 @@ export class RestCallService {
   }
 
   postRestCall(url: string, requestBody: any): Observable<any> {
-    const header = new HttpHeaders().append(
+    const headers = new HttpHeaders().append(
       'Content-Type',
       'application/json;charset=UTF-8'
-    )
-    return this._httpClient.post(url, requestBody, { header});
+    );
+    return this._httpClient.post(url, requestBody, { headers});
   }
 }

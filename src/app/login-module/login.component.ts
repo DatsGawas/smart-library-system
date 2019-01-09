@@ -15,7 +15,7 @@ import {RestCallService} from "../core-module/rest-call.service";
 
         <div class="card ">
           <div class="card-header">
-           Login
+           <h2>Login</h2>
           </div>
           <div class="card-body">
             <form #loginForm="ngForm">

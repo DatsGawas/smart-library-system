@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {RouterModule, Routes} from '@angular/router';
 import {CoreModule} from "./core-module/core.module";
+import {NoopInterceptor} from "./services/noop-interceptor";
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
 
 const routes: Routes = [
   {
@@ -14,6 +16,9 @@ const routes: Routes = [
   },
   {
     path: 'login', loadChildren: './login-module/login.module#LoginModule'
+  },
+  {
+    path: 'register', loadChildren: './user-module/user.module#UserModule'
   }
 ];
 
@@ -22,9 +27,11 @@ const routes: Routes = [
     AppComponent
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(routes), CoreModule
+    BrowserModule, RouterModule.forRoot(routes, { useHash : true}), CoreModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: NoopInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

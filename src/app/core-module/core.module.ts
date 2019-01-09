@@ -5,10 +5,11 @@ import {ModuleWithProviders, NgModule} from '@angular/core';
 import {FormsModule} from "@angular/forms";
 import {RestCallService} from "./rest-call.service";
 import {HttpClientModule} from "@angular/common/http";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
-  imports: [FormsModule, HttpClientModule],
-  exports: [FormsModule, HttpClientModule],
+  imports: [FormsModule, HttpClientModule, CommonModule],
+  exports: [FormsModule, HttpClientModule, CommonModule],
   declarations: [],
   providers: [],
 })
