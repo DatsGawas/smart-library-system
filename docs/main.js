@@ -50,7 +50,7 @@ module.exports = webpackAsyncContext;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\" style=\"overflow-x: hidden\">\n<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n  <a class=\"navbar-brand\" style=\"color: red\">Smart-Library</a>\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item active\">\n        <a class=\"nav-link\" [routerLink]=\"'/home'\">Home</a>\n      </li>\n    </ul>\n    <form class=\"form-inline my-2 my-lg-0\">\n      <a class=\"nav-link\" [routerLink]=\"'/register'\">Register</a>\n      <a class=\"nav-link\" [routerLink]=\"'/login'\">Login</a>\n    </form>\n  </div>\n</nav>\n<div>\n  <router-outlet></router-outlet>\n</div>\n</div>\n"
+module.exports = "<div class=\"container-fluid\" style=\"overflow-x: hidden\">\r\n<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n  <a class=\"navbar-brand\" style=\"color: red\">Smart-Library</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item active\">\r\n        <a class=\"nav-link\" [routerLink]=\"'/home'\">Home</a>\r\n      </li>\r\n    </ul>\r\n    <form class=\"form-inline my-2 my-lg-0\">\r\n      <a class=\"nav-link\" [routerLink]=\"'/register'\">Register</a>\r\n      <a class=\"nav-link\" [routerLink]=\"'/login'\">Login</a>\r\n    </form>\r\n  </div>\r\n</nav>\r\n<div>\r\n  <router-outlet></router-outlet>\r\n</div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -378,7 +378,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/dattaram/Datta/projects/library management System/smart-library-system/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\dats\smart-library-system\src\main.ts */"./src/main.ts");
 
 
 /***/ })
