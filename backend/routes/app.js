@@ -2,6 +2,8 @@ const express = require("express");
 
 const bodyParser = require("body-parser");
 
+const User = require("../models/user");
+
 const app = express();
 
 app.use(bodyParser.json());
@@ -19,14 +21,20 @@ app.use((req, res, next) => {
   next();
 });
 
-app.post("/api/addBook", (req, res, next) => {
-  const book = req.body;
-  console.log(book);
-  res.status(201).json({ message: "book added successfully" });
-});
-
 app.post("/api/registerUser", (req, res, next) => {
-  const user = req.body;
+  debugger;
+  console.log(req.body);
+
+  const user = new User({
+    emailId: req.body._emailId,
+    firstName: req.body._firstName,
+    lastName: req.body._lastName,
+    phoneNo: req.body._phoneNo,
+    address: req.body._address,
+    password: req.body._password,
+    conformPassword: req.body._conformPassword,
+    gender: req.body._gender
+  });
   console.log(user);
   res.status(201).json({ message: "user added successfully" });
 });

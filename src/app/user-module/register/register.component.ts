@@ -162,7 +162,6 @@ import { environment } from "src/environments/environment";
           </div>
           <div class="card-footer text-muted text-right">
             <button
-              [disabled]="!registerForm.valid"
               type="submit"
               class="btn btn-primary"
               (click)="onRegisterClick()"
@@ -188,7 +187,7 @@ export class RegisterComponent implements OnInit {
     this._httpClient
       .post(environment.domain + "api/registerUser", this.registerModel)
       .subscribe((res: any) => {
-        this._router.navigate(["/login"]);
+        // this._router.navigate(["/login"]);
       });
   }
 }
