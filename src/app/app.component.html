@@ -1,23 +1,39 @@
 <div class="container-fluid" style="overflow-x: hidden">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" style="color: red">Smart-Library</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" style="color: red">Smart-Library</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" [routerLink]="'/home'">Home</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <a class="nav-link" [routerLink]="'/register'">Register</a>
-      <a class="nav-link" [routerLink]="'/login'">Login</a>
-    </form>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" (click)="navigateToPage('home')">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" (click)="navigateToPage('home/add-book')"
+            >Add Book</a
+          >
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" (click)="navigateToPage('home/books')">Books</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <a class="nav-link" [routerLink]="'/register'">Register</a>
+        <a class="nav-link" [routerLink]="'/login'">Login</a>
+      </form>
+    </div>
+  </nav>
+  <div>
+    <router-outlet></router-outlet>
   </div>
-</nav>
-<div>
-  <router-outlet></router-outlet>
-</div>
 </div>

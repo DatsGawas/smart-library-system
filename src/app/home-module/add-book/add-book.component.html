@@ -1,0 +1,139 @@
+<div class="row justify-content-center" style="padding-top: 4%">
+  <div class="col-7">
+    <div class="card ">
+      <div class="card-header">
+        <h5>Add Book</h5>
+      </div>
+      <div class="card-body">
+        <form #registerForm="ngForm">
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label for="exampleInputFirstName">Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  required
+                  [(ngModel)]="book.title"
+                  name="title"
+                  id="exampleInputTitle"
+                  aria-describedby="title"
+                  placeholder="Enter title"
+                />
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label for="exampleInputlastName">Subtitle</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  required
+                  [(ngModel)]="book.subtitle"
+                  name="subtitle"
+                  id="exampleInputsubtitle"
+                  aria-describedby="subtitle"
+                  placeholder="Enter subtitle"
+                />
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Author</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  required
+                  [(ngModel)]="book.author"
+                  name="author"
+                  id="exampleInputauthor"
+                  aria-describedby="emailHelp"
+                  placeholder="Enter author"
+                />
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label for="exampleInputphoneNo">Published</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  required
+                  pattern="[789][0-9]{9}"
+                  [(ngModel)]="book.published"
+                  name="lastname"
+                  id="exampleInputpublished"
+                  aria-describedby="published"
+                  placeholder="Enter published date"
+                />
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="form-group">
+                <label for="exampleInputPassword">publisher</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  required
+                  [(ngModel)]="book.publisher"
+                  name="publisher"
+                  id="exampleInputpublisher"
+                  placeholder="publisher"
+                />
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="form-group">
+                <label for="exampleInputconformPassword">Website</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  required
+                  [(ngModel)]="book.website"
+                  name="website"
+                  id="exampleInputconwebsite"
+                  placeholder="website"
+                />
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label for="exampleInputconformPassword">Pages</label>
+                <input
+                  class="form-control"
+                  type="number"
+                  required
+                  [(ngModel)]="book.pages"
+                  name="pages"
+                  id="exampleInputpages"
+                  placeholder="pages"
+                />
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Description</label>
+                <textarea
+                  [(ngModel)]="book.description"
+                  name="description"
+                  class="form-control"
+                  id="exampleFormdescription"
+                  rows="3"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer text-muted text-right">
+        <button type="submit" class="btn btn-primary" (click)="addBookHandle()">
+          Add
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
