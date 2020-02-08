@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { catchError, retry, map } from "rxjs/internal/operators";
 import { environment } from "src/environments/environment";
-import { Observable } from "rxjs";
+import { Observable, throwError } from "rxjs";
 import { Book } from "src/app/interface/book";
 
 @Component({
@@ -11,11 +11,7 @@ import { Book } from "src/app/interface/book";
   styleUrls: ["./books-list.component.scss"]
 })
 export class BooksListComponent implements OnInit {
-  books: any[] = [];
-  home: string;
-  constructor(private _httpClient: HttpClient) {}
-
-  ngOnInit() {
+  ngOnInit(): void {
     this._httpClient
       .get<any>(environment.domain + "api/getBooks")
       .pipe(
@@ -41,6 +37,9 @@ export class BooksListComponent implements OnInit {
         this.books = [...bookData];
       });
   }
+  books: any[] = [];
+  home: string;
+  constructor(private _httpClient: HttpClient) {}
 
   removeBook(book: Book) {
     this._httpClient

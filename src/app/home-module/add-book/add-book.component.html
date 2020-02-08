@@ -5,7 +5,7 @@
         <h5>Add Book</h5>
       </div>
       <div class="card-body">
-        <form #registerForm="ngForm">
+        <form [formGroup]="bookForm">
           <div class="row">
             <div class="col-6">
               <div class="form-group">
@@ -13,13 +13,16 @@
                 <input
                   type="text"
                   class="form-control"
-                  required
                   [(ngModel)]="book.title"
                   name="title"
                   id="exampleInputTitle"
                   aria-describedby="title"
                   placeholder="Enter title"
+                  formControlName="title"
                 />
+              </div>
+              <div class="error" *ngIf="bookForm.get('title').invalid">
+                Please enter book title
               </div>
             </div>
             <div class="col-6">
@@ -28,13 +31,16 @@
                 <input
                   type="text"
                   class="form-control"
-                  required
+                  formControlName="subtitle"
                   [(ngModel)]="book.subtitle"
                   name="subtitle"
                   id="exampleInputsubtitle"
                   aria-describedby="subtitle"
                   placeholder="Enter subtitle"
                 />
+              </div>
+              <div class="error" *ngIf="bookForm.get('subtitle').invalid">
+                Please enter book sub title
               </div>
             </div>
 
@@ -44,54 +50,59 @@
                 <input
                   type="text"
                   class="form-control"
-                  required
+                  formControlName="author"
                   [(ngModel)]="book.author"
-                  name="author"
                   id="exampleInputauthor"
                   aria-describedby="emailHelp"
                   placeholder="Enter author"
                 />
               </div>
+              <div class="error" *ngIf="bookForm.get('author').invalid">
+                Please enter book author
+              </div>
             </div>
             <div class="col-6">
               <div class="form-group">
-                <label for="exampleInputphoneNo">Published</label>
+                <label for="exampleInputpublished">Published</label>
                 <input
                   type="text"
                   class="form-control"
-                  required
-                  pattern="[789][0-9]{9}"
+                  formControlName="published"
                   [(ngModel)]="book.published"
-                  name="lastname"
                   id="exampleInputpublished"
                   aria-describedby="published"
                   placeholder="Enter published date"
                 />
               </div>
-            </div>
-
-            <div class="col-6">
-              <div class="form-group">
-                <label for="exampleInputPassword">publisher</label>
-                <input
-                  class="form-control"
-                  type="text"
-                  required
-                  [(ngModel)]="book.publisher"
-                  name="publisher"
-                  id="exampleInputpublisher"
-                  placeholder="publisher"
-                />
+              <div class="error" *ngIf="bookForm.get('published').invalid">
+                Please enter book published Date
               </div>
             </div>
 
             <div class="col-6">
               <div class="form-group">
-                <label for="exampleInputconformPassword">Website</label>
+                <label for="exampleInputpublisher">publisher</label>
                 <input
                   class="form-control"
                   type="text"
-                  required
+                  formControlName="publisher"
+                  [(ngModel)]="book.publisher"
+                  id="exampleInputpublisher"
+                  placeholder="publisher"
+                />
+              </div>
+              <div class="error" *ngIf="bookForm.get('publisher').invalid">
+                Please enter book publisher
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="form-group">
+                <label for="exampleInputconwebsite">Website</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  formControlName="website"
                   [(ngModel)]="book.website"
                   name="website"
                   id="exampleInputconwebsite"
@@ -101,36 +112,60 @@
             </div>
             <div class="col-6">
               <div class="form-group">
-                <label for="exampleInputconformPassword">Pages</label>
+                <label for="exampleInputpages">Pages</label>
                 <input
                   class="form-control"
                   type="number"
-                  required
+                  formControlName="pages"
                   [(ngModel)]="book.pages"
-                  name="pages"
                   id="exampleInputpages"
                   placeholder="pages"
                 />
+              </div>
+
+              <div class="error" *ngIf="bookForm.get('pages').invalid">
+                Please enter book pages
               </div>
             </div>
 
             <div class="col-12">
               <div class="form-group">
-                <label for="exampleFormControlTextarea1">Description</label>
+                <label for="exampleFormdescription">Description</label>
                 <textarea
                   [(ngModel)]="book.description"
-                  name="description"
                   class="form-control"
                   id="exampleFormdescription"
                   rows="3"
+                  formControlName="description"
                 ></textarea>
+              </div>
+            </div>
+            <div class="col-12">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                (click)="filePicker.click()"
+              >
+                Upload image
+              </button>
+              <input #filePicker type="file" (change)="onImageUpload($event)" />
+
+              <div
+                class="image-preview"
+                *ngIf="
+                  imagePreview &&
+                  imagePreview !== '' &&
+                  bookForm.get('image').valid
+                "
+              >
+                <img [src]="imagePreview" [alt]="bookForm.value.title" />
               </div>
             </div>
           </div>
         </form>
       </div>
       <div class="card-footer text-muted text-right">
-        <button type="submit" class="btn btn-primary" (click)="addBookHandle()">
+        <button class="btn btn-primary" (click)="addBookHandle()">
           Add
         </button>
       </div>

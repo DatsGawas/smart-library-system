@@ -10,17 +10,25 @@ const Books = require("../models/book");
 const app = express();
 
 //  connect to mongodb
+// mongoose
+//   .connect(
+//     "mongodb+srv://datta:oISgsDUerE57FowZ@d-app-ngv74.mongodb.net/smart-library?retryWrites=true&w=majority"
+//   )
+//   .then(() => {
+//     console.log("connected to database");
+//   })
+//   .catch(() => {
+//     console.log("connection failed");
+//   });
+
 mongoose
-  .connect(
-    "mongodb+srv://datta:oISgsDUerE57FowZ@d-app-ngv74.mongodb.net/smart-library?retryWrites=true&w=majority"
-  )
+  .connect("mongodb://localhost:27017/smart-library")
   .then(() => {
     console.log("connected to database");
   })
   .catch(() => {
     console.log("connection failed");
   });
-
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {

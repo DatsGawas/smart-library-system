@@ -1,0 +1,15 @@
+input[type="file"] {
+  visibility: hidden;
+}
+
+.error {
+  color: red;
+}
+.image-preview {
+  height: 5rem;
+  margin: 1rem;
+}
+
+.image-preview img {
+  height: 100%;
+}
