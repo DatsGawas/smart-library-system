@@ -65,8 +65,24 @@ export class AddBookComponent implements OnInit {
     if (this.bookForm.invalid) {
       return;
     }
+    const postData = new FormData();
+    postData.append("title", this.book.title);
+
+    postData.append("subtitle", this.book.subtitle);
+    postData.append("author", this.book.author);
+
+    postData.append("published", this.book.published);
+
+    postData.append("publisher", this.book.publisher);
+    postData.append("description", this.book.description);
+
+    postData.append("pages", this.book.pages);
+
+    postData.append("website", this.book.website);
+    postData.append("image", this.bookForm.value.image, this.book.title);
+
     this._httpClient
-      .post(environment.domain + "api/add-book", this.book)
+      .post(environment.domain + "api/add-book", postData)
       .subscribe((res: any) => {
         // this._router.navigate(["/login"]);
         this.bookForm.reset();

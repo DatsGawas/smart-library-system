@@ -1,9 +1,12 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, AfterViewInit } from "@angular/core";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { catchError, retry, map } from "rxjs/internal/operators";
 import { environment } from "src/environments/environment";
 import { Observable, throwError } from "rxjs";
 import { Book } from "src/app/interface/book";
+import * as $ from "jquery";
+
+declare var $: any;
 
 @Component({
   selector: "app-books-list",
@@ -28,7 +31,8 @@ export class BooksListComponent implements OnInit {
               publisher: book.publisher,
               description: book.description,
               pages: book.pages,
-              website: book.website
+              website: book.website,
+              imagePath: book.imagePath
             };
           });
         })

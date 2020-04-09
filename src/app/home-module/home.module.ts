@@ -8,26 +8,25 @@ import { RouterModule, Routes } from "@angular/router";
 import { CoreModule } from "../core-module/core.module";
 import { AddBookComponent } from "./add-book/add-book.component";
 import { BooksListComponent } from "./books-list/books-list.component";
-
 const routes: Routes = [
   {
     path: "",
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
     path: "add-book",
-    component: AddBookComponent
+    component: AddBookComponent,
   },
   {
     path: "books",
-    component: BooksListComponent
-  }
+    component: BooksListComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes), CoreModule.forRoot()],
   exports: [RouterModule],
   declarations: [HomeComponent, AddBookComponent, BooksListComponent],
-  providers: []
+  providers: [],
 })
 export class HomeModule {}

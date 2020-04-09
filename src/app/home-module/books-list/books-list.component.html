@@ -1,5 +1,48 @@
 <div class="row justify-content-center">
   <div class="row mt-5">
+    <!-- <div id="accordion">
+      <div class="card" *ngFor="let book of books">
+        <div class="card-header" [attr.id]="book.id">
+          <h5 class="mb-0">
+            <button
+              class="btn btn-link"
+              data-toggle="collapse"
+              [attr.data-target]="'#' + book.id"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              {{ book.title }}
+            </button>
+            <button
+              class="btn btn-primary"
+              style="float: right;"
+              (click)="removeBook(book)"
+            >
+              Delete
+            </button>
+          </h5>
+        </div>
+
+        <div
+          [attr.id]="book.id"
+          class="collapse show"
+          [attr.aria-labelledby]="book.id"
+          data-parent="#accordion"
+        >
+          <div class="card-body">
+            <a class="card-title"><b>Author :</b> {{ book.author }}</a
+            ><br />
+            <a class="card-title"><b>Publisher :</b> {{ book.publisher }}</a>
+            <p class="card-text">{{ book.description }}</p>
+            <a class="btn btn-primary">{{ book.pages }}</a>
+            <div class="image-preview">
+              <img [src]="book.imagePath" [alt]="book.title" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
     <div class="col-4" *ngFor="let book of books">
       <div class="card">
         <div class="card-header">
@@ -18,6 +61,9 @@
           <a class="card-title"><b>Publisher :</b> {{ book.publisher }}</a>
           <p class="card-text">{{ book.description }}</p>
           <a class="btn btn-primary">{{ book.pages }}</a>
+          <div class="image-preview">
+            <img [src]="book.imagePath" [alt]="book.title" />
+          </div>
         </div>
       </div>
       <br />

@@ -10,9 +10,9 @@ export class Book {
   published: string;
   publisher: string;
   description: string;
-  pages: number;
+  pages: string;
   website: string;
-  image: File;
+  imagePath: string;
   constructor() {
     this.id = null;
     this.title = "Understanding ECMAScript 6";
@@ -22,8 +22,8 @@ export class Book {
     this.publisher = "No Starch Press";
     this.description =
       "ECMAScript 6 represents the biggest update to the core of JavaScript in the history of the language. In Understanding ECMAScript 6, expert developer Nicholas C. Zakas provides a complete guide to the object types, syntax, and other exciting changes that ECMAScript 6 brings to JavaScript.";
-    this.pages = 352;
+    this.pages = "352";
     this.website = "https://leanpub.com/understandinges6/read";
-    this.image = null;
+    this.imagePath = null;
   }
 }
